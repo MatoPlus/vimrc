@@ -69,6 +69,11 @@ let g:livedown_browser = "firefox"
 " vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
 
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 "                              _             
 "  _ __ ___   __ _ _ __  _ __ (_)_ __   __ _ 
 " | '_ ` _ \ / _` | '_ \| '_ \| | '_ \ / _` |
@@ -90,6 +95,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Avoid the Esc key
+imap fd <Esc>
 
 " Move a line of text using SHIFT+[jk]
 nmap <S-j> mz:m+<CR>`z
@@ -121,16 +129,16 @@ map <C-m> :NERDTreeToggle<CR>
 "|_|              |___/                                       |___/ 
 
 " Enable grey vertical column for listed filetypes
-autocmd FileType java,python,cpp set colorcolumn=120 | highlight ColorColumn ctermbg=grey
+autocmd FileType java,python,cpp,c set colorcolumn=120 | highlight ColorColumn ctermbg=grey
 
 " complie and execute current py2 file
 autocmd FileType python nnoremap <F2> :!python %<CR>
 " complie and execute current py3 file
 autocmd FileType python nnoremap <F3> :!python3 %<CR>
-
-" Java mapping
 " complie and execute java project
 autocmd FileType java nnoremap <F3> :!find -name "*.java" > sources.tmp && javac @sources.tmp && rm sources.tmp && java %:r<CR>
+" complie and execute c file
+autocmd FileType c nnoremap <F2> :!gcc -o %:r % && ./%:r<CR>
 
 
 filetype off                  " required
@@ -151,11 +159,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'aperezdc/vim-template'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -169,6 +177,9 @@ Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'junegunn/goyo.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'cohama/lexima.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'xavierd/clang_complete'
 
 " All of your Plugins must be added before the following line
 
