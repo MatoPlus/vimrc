@@ -116,7 +116,7 @@ vnoremap <leader>c "+y
 map <leader>p "+p
 
 " Run a detached term on current directory
-map <C-t> :silent !$term -cd '%:p:h' &<CR>
+map <C-t> :silent !$term bash -c "cd '%:p:h'; bash" &<CR>
 
 " NerdTree
 map <C-m> :NERDTreeToggle<CR>
@@ -179,7 +179,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'cohama/lexima.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'xavierd/clang_complete'
 
 " All of your Plugins must be added before the following line
 
