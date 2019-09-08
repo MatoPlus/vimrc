@@ -74,6 +74,30 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+"Uncomment to override defaults:
+"let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
+"
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar': 1,
+      \ 'notes': 1,
+      \ 'netrw': 1,
+      \ 'unite': 1,
+      \ 'text': 1,
+      \ 'vimwiki': 1,
+      \ 'pandoc': 1,
+      \ 'infolog': 1,
+      \ 'mail': 1
+      \}
+
 "                              _             
 "  _ __ ___   __ _ _ __  _ __ (_)_ __   __ _ 
 " | '_ ` _ \ / _` | '_ \| '_ \| | '_ \ / _` |
@@ -120,6 +144,12 @@ map <C-t> :silent !$term bash -c "cd '%:p:h'; bash" &<CR>
 
 " NerdTree
 map <C-m> :NERDTreeToggle<CR>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "                                                     _             
 " _ __  _ __ ___   __ _ _ __ __ _ _ __ ___  _ __ ___ (_)_ __   __ _ 
@@ -179,6 +209,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'cohama/lexima.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'gabrielelana/vim-markdown'
+Plugin 'junegunn/vim-easy-align'
 
 " All of your Plugins must be added before the following line
 
