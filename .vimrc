@@ -9,6 +9,10 @@ set encoding=utf-8
 filetype indent on
 syntax on
 
+" colortheme
+colorscheme koehler
+
+
 " Expand command history
 set history=500
 
@@ -73,19 +77,7 @@ let g:livepreview_previewer = 'zathura'
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-"Uncomment to override defaults:
-"let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 0
-"let g:instant_markdown_open_to_the_world = 1
-"let g:instant_markdown_allow_unsafe_content = 1
-"let g:instant_markdown_allow_external_content = 0
-"let g:instant_markdown_mathjax = 1
-"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
-let g:instant_markdown_autoscroll = 0
-"let g:instant_markdown_port = 8888
-"let g:instant_markdown_python = 1
-"
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_filetype_blacklist = {
       \ 'tagbar': 1,
       \ 'notes': 1,
@@ -97,6 +89,9 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog': 1,
       \ 'mail': 1
       \}
+
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'c', 'python', 'java']
+let g:markdown_syntax_conceal = 0
 
 "                              _             
 "  _ __ ___   __ _ _ __  _ __ (_)_ __   __ _ 
@@ -135,7 +130,7 @@ nnoremap <ESC><ESC> :silent! nohlsearch<CR>
 " Turn on spell-check
 map <F9> :setlocal spell! spelllang=en_ca<CR>
 
-" Copy-pase
+" Copy-paste
 vnoremap <leader>c "+y
 map <leader>p "+p
 
@@ -209,9 +204,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'cohama/lexima.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'jceb/vim-orgmode'
 
 " All of your Plugins must be added before the following line
 
