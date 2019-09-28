@@ -163,7 +163,7 @@ autocmd FileType python nnoremap <F3> :!python3 %<CR>
 " complie and execute java project
 autocmd FileType java nnoremap <F3> :!find -name "*.java" > sources.tmp && javac @sources.tmp && rm sources.tmp && java %:r<CR>
 " complie and execute c file
-autocmd FileType c nnoremap <F2> :!gcc -o %:r.out % && ./%:r<CR>
+autocmd FileType c nnoremap <F2> :!gcc -o %:r.out % && ./%:r.out<CR>
 
 
 filetype off                  " required
