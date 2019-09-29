@@ -78,6 +78,7 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_show_diagnostics_ui = 0
 let g:ycm_filetype_blacklist = {
       \ 'tagbar': 1,
       \ 'notes': 1,
@@ -92,6 +93,10 @@ let g:ycm_filetype_blacklist = {
 
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'c', 'python', 'java']
 let g:markdown_syntax_conceal = 0
+
+highlight ALEError ctermbg=none cterm=underline ctermfg=red
+highlight ALEWarning ctermbg=none cterm=underline ctermfg=grey
+
 
 "                              _             
 "  _ __ ___   __ _ _ __  _ __ (_)_ __   __ _ 
