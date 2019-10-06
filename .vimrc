@@ -121,10 +121,10 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Resize panes
-noremap <C-w>+ :resize +5<CR>
-noremap <C-w>- :resize -5<CR>
-noremap <C-w>< :vertical:resize -5<CR>
-noremap <C-w>> :vertical:resize +5<CR>
+noremap <C-w>+ :resize +10<CR>
+noremap <C-w>- :resize -10<CR>
+noremap <C-w>< :vertical:resize -10<CR>
+noremap <C-w>> :vertical:resize +10<CR>
 
 " Avoid the Esc key
 imap fd <Esc>
@@ -177,7 +177,7 @@ autocmd FileType python nnoremap <F3> :!python3 %<CR>
 " complie and execute java project
 autocmd FileType java nnoremap <F3> :!find -name "*.java" > sources.tmp && javac @sources.tmp && rm sources.tmp && java %:r<CR>
 " complie and execute c file
-autocmd FileType c nnoremap <F2> :!gcc -o %:r.out % && ./%:r.out<CR>
+autocmd FileType c nnoremap <F2> :!gcc -o %:r.out % && ./%:r.o<CR>
 
 
 filetype off                  " required
@@ -215,7 +215,6 @@ Plugin 'shime/vim-livedown'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'junegunn/goyo.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'cohama/lexima.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'gabrielelana/vim-markdown'
