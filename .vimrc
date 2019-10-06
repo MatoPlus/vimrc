@@ -120,6 +120,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Resize panes
+noremap <C-w>+ :resize +5<CR>
+noremap <C-w>- :resize -5<CR>
+noremap <C-w>< :vertical:resize -5<CR>
+noremap <C-w>> :vertical:resize +5<CR>
+
 " Avoid the Esc key
 imap fd <Esc>
 
@@ -141,9 +147,6 @@ map <leader>p "+p
 
 " Run a detached term on current directory
 map <C-t> :silent !$term bash -c "cd '%:p:h'; bash" &<CR>
-
-" NerdTree
-map <C-m> :NERDTreeToggle<CR>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
