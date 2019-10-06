@@ -212,6 +212,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'jceb/vim-orgmode'
+Plugin 'Chiel92/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 
